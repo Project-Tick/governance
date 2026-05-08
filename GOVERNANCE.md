@@ -1,4 +1,4 @@
-# Project Tick Governance v6, 06 May 2026
+# Project Tick Governance v7, 08 May 2026
 
 <!--
 
@@ -19,7 +19,7 @@ This document discusses the Project Tick ecosystem, repository management method
 
 ## Management
 
-Project Tick's CI/CD requirements can be viewed via GitHub Actions; the NameSpace can be accessed via GitLab™ SaaS at [gitlab.com/project-tick/][6]. Upon entering the NameSpace, you will be greeted by a README file summarizing the process. As of April 29th, Project Tick has completely discontinued the use of Pull Requests (PR). Even without a Pull Request, you can easily use your repository rights and open a Merge Request (MR) through GitLab using GitHub OAuth or a personal account. All you need to do is open a MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we are now more free and our workflows are now repository-independent. Project Tick also has a GitLab™ SaaS OSS Ultimate subscription. This simplifies both the CI/CD processes and makes our work easier. As of May 6th, Project Tick has officially abandoned the monorepo structure. The new structure is open. We call this the polyrepo structure. Each sub-project has its own repository. Hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace entry page.
+Project Tick's CI/CD requirements can be viewed via GitHub Actions; the NameSpace AND instance can be accessed via GitLab™ Self-Managed at [git.projecttick.org/project-tick/][6]. Upon entering the NameSpace, you will be greeted by a README file summarizing the process. As of April 29th, Project Tick has completely discontinued the use of Pull Requests (PR). Even without a Pull Request, you can easily use your repository rights and open a Merge Request (MR) through GitLab using GitHub OAuth or a personal account. All you need to do is open a MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we are now more free and our workflows are now repository-independent. Project Tick also has a GitLab™ Self Managed Enterprise Edition OSS Ultimate subscription. This simplifies both the CI/CD processes and makes our work easier. As of May 6th, Project Tick has officially abandoned the monorepo structure. The new structure is open. We call this the polyrepo structure. Each sub-project has its own repository. Hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace entry page.
 
 ### Merge Request Model
 
@@ -31,7 +31,7 @@ Maintainers are responsible for maintaining the project folder located in the CO
 
 ### Repository Model
 
-Our repositories are not continuously and actively cloned to any platform. However, we use GitHub's Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in our own GitLab. In doing so, we have made workflows as repository-independent as possible, except for "secrets". Tons of projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we must also give credit to Flathub; we forked their "vorarbeiter" project, so we thank them. "Copyright (C) 2025 Flathub". As of May 6th, we are ending our mirroring efforts on Github and Codeberg. Because Github and Codeberg are now hindering us. To ensure CI/CD updates continue, the `project-tick/infra/github-actions` repository is mirrored to the `project-tick/project-tick` target on GitHub. If the URLs are broken, they need to be fixed; this is not our responsibility (except for our URLs). TL;DR: Go to gitlab.com, create an account, fork the repository(s), commit, open a merge request, run CI/CD, make sure it's successful, and we'll check and merge it. It's that simple.
+Our repositories are not continuously and actively cloned to any platform. However, we use GitHub's Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in our own GitLab. In doing so, we have made workflows as repository-independent as possible, except for "secrets". Tons of projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we must also give credit to Flathub; we forked their "vorarbeiter" project, so we thank them. "Copyright (C) 2025 Flathub". As of May 6th, we are ending our mirroring efforts on Github and Codeberg. Because Github and Codeberg are now hindering us. To ensure CI/CD updates continue, the `project-tick/infra/github-actions` repository is mirrored to the `project-tick/project-tick` target on GitHub. If the URLs are broken, they need to be fixed; this is not our responsibility (except for our URLs). TL;DR: Go to git.projecttick.org, create an account, fork the repository(s), commit, open a merge request, run CI/CD, make sure it's successful, and we'll check and merge it. It's that simple.
 
 ### Decision-Making Model
 
@@ -93,7 +93,7 @@ Don't worry! We're not jealous of you using AI, but we don't support it, nor are
 
 ### Source of Truth Model
 
-The official Project Tick group can be accessed at gitlab.com. Remember, we have no affiliation with GitHub (except for CI/CD). However, once these conditions are met – that is, when we have independent CI/CD machines – full independence will be achieved, and this issue will be resolved to some extent. We are thinking of you and you can be sure we will act accordingly. We returned to GitHub due to CI/CD restrictions and configurations, and decided that GitLab SaaS was not suitable for us (about a month ago. I know we were a little hesitant, but please understand; finding the most suitable platform is of utmost importance to us). GitLab's contribution threshold is a bit high, and it's difficult for contributors to reach us, but let's not deny them their due. But you might ask, "Didn't the contribution surface increase even more when you left GitLab and moved to your own infrastructure?" Don't worry. We returned to GitLab because why not? Joking aside, thanks to Foreman, we can solve the CI/CD issue in Merge Requests. We've completely dropped Mailman, Gitolite, CGit, Gitweb, Forgejo, Bugzilla, and GitLab SM. We're all in one place now. We're also completely leaving GitHub, except for CI/CD, because of the frustrating issues it's been causing lately. You can open your PRs as MRs and your [Issues as Work Items in GitLab][4].
+The official Project Tick group and instance can be accessed [here]. Remember, we have no affiliation with GitHub (except for CI/CD). However, when these conditions are met – that is, when we have independent CI/CD machines – full independence will be achieved and this issue will be resolved to some extent. We are thinking of you and you can be sure that we will act accordingly. We returned to GitHub due to CI/CD restrictions and configurations, and decided that GitLab was not suitable for us. GitLab's contribution threshold is a bit high, and it is difficult for contributors to reach us, but let's not deny them their due. But you might ask, "Didn't the contribution space increase even more when you left GitLab SaaS and moved to your own infrastructure?" Don't worry. We returned to GitLab SM, thinking, "Why not?" Joking aside, thanks to Foreman, we can solve the CI/CD issue in Merge Requests. We have completely abandoned Mailman, Gitolite, CGit, Gitweb, Forgejo, and Bugzilla. Now we are all in one place. We are also abandoning GitHub entirely, except for CI/CD, due to the frustrating issues it has been causing recently. You can open your PRs as MRs, [and your Issues as Work Items in GitLab][4].
 
 ### PolyRepo Model
 
@@ -101,7 +101,7 @@ Project Tick has completely switched from the MonoRepo model to a PolyRepo model
 
 ### Mirror's Deprecation WARNING
 
-Project Tick has discontinued mirroring services since transitioning to a polyrepo structure, specifically with Governance v6, except for github-actions and/or some exceptional repositories. The Project-Tick/Project-Tick repository on Github will remain to allow Foreman to handle CI/CD services, but its content will no longer be available. The mirrored locations are: Github, Codeberg Repo.or.cz.
+Project Tick has discontinued mirroring services since transitioning to a polyrepo structure, specifically with Governance v6, except for github-actions and/or some exceptional repositories. The Project-Tick/Project-Tick repository on Github will remain to allow Foreman to handle CI/CD services, but its content will no longer be available. The mirrored locations are: Github, Gitlab Saas, Codeberg and Repo.or.cz.
 
 ### Labeling Model
 
@@ -167,6 +167,6 @@ GITLAB is a trademark of GitLab Inc. in the United States and other countries an
 [1]: https://github.com/YongDo-Hyun
 [2]: https://github.com/project-tick/project-tick.git
 [3]: https://id.projecttick.net/realms/projecttick/account
-[4]: https://gitlab.com/groups/project-tick/-/work_items
-[5]: https://gitlab.com/project-tick/governance/governancedoc/-/blob/master/GOVERNANCE.md#merge-request-model
-[6]: https://gitlab.com/project-tick/
+[4]: https://git.projecttick.org/groups/project-tick/-/work_items
+[5]: https://git.projecttick.org/project-tick/governance/governancedoc/-/blob/master/GOVERNANCE.md#merge-request-model
+[6]: https://git.projecttick.org/project-tick/
