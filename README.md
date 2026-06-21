@@ -1,4 +1,4 @@
-# Project Tick Governance v7, 08 May 2026
+# Project Tick Governance v8, 22 June 2026
 
 <!--
 
@@ -15,35 +15,35 @@ the Project Tick name, branding, and trademarks must be removed or clearly disti
 
 Welcome to Project Tick!
 
-This document discusses the Project Tick ecosystem, repository management methods, and governance structure. With Project Tick Governance v6, the Monorepo model has been replaced with a PolyRepo model.
+This document discusses the Project Tick ecosystem, repository management methods, and governance structure. Please note that Project Tick is an Umbrella project and is fully open to external project submissions. So, please register your projects [here][1]! Project Tick is a group dedicated to developing fully open-source projects, in addition to being an infrastructure project. It has no dependencies.
 
 ## Management
 
-Project Tick's CI/CD requirements can be viewed via GitHub Actions; the NameSpace AND instance can be accessed via GitLab™ Self-Managed at [git.projecttick.org/project-tick/][6]. Upon entering the NameSpace, you will be greeted by a README file summarizing the process. As of April 29th, Project Tick has completely discontinued the use of Pull Requests (PR). Even without a Pull Request, you can easily use your repository rights and open a Merge Request (MR) through GitLab using GitHub OAuth or a personal account. All you need to do is open a MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we are now more free and our workflows are now repository-independent. Project Tick also has a GitLab™ Self Managed Enterprise Edition OSS Ultimate subscription. This simplifies both the CI/CD processes and makes our work easier. As of May 6th, Project Tick has officially abandoned the monorepo structure. The new structure is open. We call this the polyrepo structure. Each sub-project has its own repository. Hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace entry page.
+Project Tick's CI/CD requirements can be viewed via GitHub Actions and GitLab CI; the NameSpace and instance are accessible via GitLab™ SaaS at [gitlab.com/project-tick/][2]. When you enter the NameSpace, you will find a README file outlining the process. This is a different world from GitHub. Remember, even without a Pull Request, you can easily exercise your rights in your repository and open a Merge Request (MR) via GitLab. All you have to do is open an MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we were always free. But now we are even freer, and our workflows are now repository-independent. This ensures the highest level of security. Each sub-project has its own repository. The hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace homepage. GitLab is a structure that allows us to manage security controls, nested structures from a single top-down perspective, and to directly name any project or subgroup regardless of logo and path. Therefore, we always support GitLab and are fully behind it. You can reach Project Tick via [Help Desk][3].
 
 ### Merge Request Model
 
-As mentioned above, you submit an MR, it's reviewed, CI/CD is run, and if your results are successful, your commits are included directly into the main stream in their pure form via a merge commit.
+As mentioned above, you submit an MR. The authorities in that area review the files you've modified. If they deem it appropriate, they approve it. However, if they deem it inappropriate, they always have the right to reject it. Remember, we work here voluntarily and don't even accept donations. Please be tolerant of time discrepancies and delays, because that's the spirit of Open Source. We work asynchronously. After fulfilling the maintainer's requests, or if your code is already good and the pipeline is successful, your commits are consolidated into a single commit (merge train if available, otherwise direct merge) and included in the main branch with an additional merge commit. If you want to appear in the ChangeLog, you can check the Release Model and Changelog Model.
 
 ### Maintainer model
 
-Maintainers are responsible for maintaining the project folder located in the CODEOWNERS in the root directory. How to become a Maintainer? If you're wondering how to manage and improve your project folder according to Project Tick standards, our model is quite simple. You contribute long-term, and if deemed appropriate, your name is assigned to the necessary files in this folder, making you an administrator. Dear Maintainers, we expect you to treat contributors well and respectfully in accordance with the Code of Conduct. Please do your best to do so. With GitLab, you now have even more freedom. You can conduct your work comfortably and openly. After all, Github completely ties our hands.  As the Software Freedom Conservancy says: Give Up Github!
+Maintainers are responsible for maintaining the project folder located in CODEOWNERS in the root directory. How to become a Maintainer? If you're wondering how to manage and develop your project folder according to Project Tick standards, our model is quite simple. You contribute long-term, and if deemed appropriate, your name is assigned to the necessary files in this folder, thus making you an administrator. If you don't want to bother with all that because you're busy, develop a project yourself and register with Project Tick. Dear Maintainers, we expect you to treat contributors well and respectfully in accordance with the Code of Conduct. Please do your best to do so. With GitLab, you now have even more freedom. You can conduct your work comfortably and openly. Ultimately, Github completely ties our hands. It hands over our code to LLMs. Even though we are open to LLMs, our code should remain with us. As the Software Freedom Conservancy says: Give Up Github! GitHub is inhumane. It simply binds us to itself stubbornly, and it continues to do so.
 
 ### Repository Model
 
-Our repositories are not continuously and actively cloned to any platform. However, we use GitHub's Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in our own GitLab. In doing so, we have made workflows as repository-independent as possible, except for "secrets". Tons of projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we must also give credit to Flathub; we forked their "vorarbeiter" project, so we thank them. "Copyright (C) 2025 Flathub". As of May 6th, we are ending our mirroring efforts on Github and Codeberg. Because Github and Codeberg are now hindering us. To ensure CI/CD updates continue, the `project-tick/infra/github-actions` repository is mirrored to the `project-tick/project-tick` target on GitHub. If the URLs are broken, they need to be fixed; this is not our responsibility (except for our URLs). TL;DR: Go to git.projecttick.org, create an account, fork the repository(s), commit, open a merge request, run CI/CD, make sure it's successful, and we'll check and merge it. It's that simple.
+Our repositories aren't constantly and actively cloned to any platform. However, we use GitHub's Actions and our Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in GitLab. In doing so, we've made workflows as independent of the repository as possible, except for "secrets". Many projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we should also thank Flathub; we were inspired by their "vorarbeiter" project. We forked it initially, then rewrote it with Ruby on Rails to counter the slowness of Python, so we thank them for giving us this inspiration. TL;DR: Go to gitlab.com, create an account, fork the repository(s), commit, open a merge request, run the CI/CD, make sure it's successful, and we'll check and merge. It's that simple.
 
 ### Decision-Making Model
 
-The decision-making mechanism is entirely under the control of the highest-ranking person, [Mehmet Samet Duman][1]. He reviews and merges Merge Requests approved by maintainers. If a maintainer uses their veto power and this does not pass Mehmet Samet Duman's approval, the PR is unconditionally closed. However, if you think this is unfair, you can send a complaint to <projecttick@projecttick.org> with the [ISSUE] tag. Of course, a maintainer does not always have the right to use their veto power, but that does not mean they can never use it.
+The decision-making mechanism is entirely under the control of the highest-ranking person, [Mehmet Samet Duman][4]. He reviews and merges Merge Requests approved by Maintainers. If a maintainer uses their veto power and this does not pass Mehmet Samet Duman's approval, the PR is unconditionally closed. However, if you think this is unfair, you can send a complaint to <projecttick@projecttick.org> with the tag [ISSUE]. Of course, a maintainer does not always have the right to use their veto power, but that does not mean they can never use it.
 
-### Patch Acceptance Model
+### Merge Request Acceptance Model
 
-Your MRs undergo rigorous testing via CI/CD. Then, the maintainer of the relevant domain reviews the patch, and if the patch makes sense and doesn't contain bad code, the administrator bot calls @project-tick/maintainers using "bot, ping admins" command. He approves, and the patch is merged, which is very simple. Actually, quite simple. Maintainers can request fixes in patches, and if you approve the request and make the necessary changes, your chances of approval increase. Conversely, if you reject it without a solid reason, the administrator has veto power. Bad code means putting excessive effort into making things easier that could be done faster. Don't bloat your codebases to be more visible or show off on Gitblame. For example, if there is more than one administrator in a domain, a folder and a top-level administrator can be in the same project; a vote is held with +1 or -1 votes, and the one with the most votes prevails. For example, you made a change to the tests in the MNV folder and submitted a Merge Request (MR). The MR is reviewed by the maintainers, and if one maintainer requests a change and another agrees, all warehouse maintainers are called to vote on the MR. However, each maintainer reserves the right not to vote. In case of a tie, the final decision is made by the BDFL.
+Your MRs undergo rigorous testing via CI/CD. Then, the maintainer of the relevant domain reviews the patch, and if the patch makes sense and doesn't contain bad code, they approve it, and the MR is merged. It's actually quite simple. Maintainers can request fixes in patches, and if you approve the request and make the necessary changes, your chances of approval increase. Conversely, if you reject it without a solid reason, the administrator has veto power. Bad code means putting excessive effort into things that could be done faster. Don't bloat your codebases to be more visible or show off on Gitblame. For example, if there are multiple administrators in a domain, a folder and a top-level administrator might be in the same project; a vote is held with +1 or -1 votes, and the one with the most votes wins. For example, you made a change to the tests in the MNV project and submitted a Merge Request (MR). The MR is reviewed by maintainers, and if one maintainer requests a change and another accepts it, all repository maintainers are called to vote on the MR. However, each maintainer reserves the right not to vote. In case of a tie, the final decision will be made by the BDFL.
 
 ### Commit & Sign-off Model
 
-Commits are made according to the DCO standard, meaning they are Signed-off-by. If DCO is not used, the MR bot will throw an error, and if this error is not corrected, the patch will be rejected. Please describe the actions you take in your commits in detail using the Header, Body, and Footer sections. We are trying to approximate the Conventional commits standard. Please try to adapt your commits accordingly.
+Commits are made according to the DCO standard, meaning they are signed with Signed-off-by. If DCO is not used, Foreman will return an error, and if this error is not corrected, mr will be rejected. Please describe the actions you take in your commits in detail using the Header, Body, and Footer sections. We are trying to approximate the Conventional commits standard. Please try to adapt your commits accordingly.
 
 ### Inactive Maintainers Model
 
@@ -51,15 +51,15 @@ If a maintainer is unavailable, their position will be vacated. Maintainers, ple
 
 ### Bug Control Model
 
-Your bug reports will be received [here][4] or Project repositories. If you have any questions or issues regarding development, you can contact us via [GitLab Work Items][4]. Your bug reports will now be handled here.
+Your bug reports will be received [here][5] or Project repositories. If you have any questions or issues regarding development, you can contact us via [GitLab Work Items][5]. Your bug reports will now be handled here.
 
 ### Project Tick SSO Model
 
-Project Tick SSO uses the Keycloak infrastructure and helps you manage all your operations on projecttick.org or projecttick.net. We have prepared 4 OAuth mechanisms; Github, GitLab SaaS, Microsoft and Google. You can create an account with these infrastructures or via email. Our website now has an SSO infrastructure instead of its own form. This will save you from account confusion, don't worry. Go ahead and create an account [Here][3]. You can manage your account from there.
+Project Tick SSO uses the Keycloak infrastructure and helps you manage all your operations on projecttick.org or projecttick.net. We have prepared 4 OAuth mechanisms; Github, GitLab SaaS, Microsoft and Google. You can create an account with these infrastructures or via email. Our website now has an SSO infrastructure instead of its own form. This will save you from account confusion, don't worry. Go ahead and create an account [Here][6]. You can manage your account from there.
 
 ### Release & Versioning Model
 
-In our versioning model, each project has its own version, and when a project is updated, a "prefixed" tag is created in its repository. The format is productname-VERSION-optionalsuffix. For example, when MNV version 10.0.4 is released, a prefixed tag is created. This model creates continuity by constantly updating the code without breaking it; if you are experiencing problems with this, you can use the latest LTS snapshot we have released. Or, if you find a bug, you can report it [here][4] or Project Repositories. Our beta versions are now available; however, our beta versions only provide source code instead of binary (executable file).
+In our versioning model, each project has its own version, and when a project is updated, a tag is created in its repository. The format is vX.Y.Z-suffix. For example, when MNV version 10.0.4 is released, a tag is created. This model creates continuity by constantly updating the code without breaking it; if you are experiencing problems with this, you can use the latest LTS snapshot we have released. Or if you find a bug, you can report it [here][5] or from the Project Repositories. Our beta versions are now available; however, our beta versions only provide source code instead of binary (executable file).
 
 ### Security Model
 
@@ -67,7 +67,7 @@ In our versioning model, each project has its own version, and when a project is
 
 If you discover a security vulnerability, please report it via email:
 
-- [`projecttick@projecttick.org`](mailto:projecttick@projecttick.org)
+- [`projecttick@projecttick.org`][7]
 
 #### What to include
 
@@ -84,26 +84,47 @@ We place great importance on SPDX. We actively define the REUSE system in both t
 
 ### AI Usage Model
 
-Don't worry! We're not jealous of you using AI, but we don't support it, nor are we against it. Use AI, but know its limits.
+Don't worry! We don't begrudge you using AI, in fact, we now support it, not oppose it. Use AI, but know its limits.
 
-- AI should never, ever use the `Signed-off-by` tag.
+- AI should never, ever use the `Signed-off-by` tag without your approval.
 - Don't send AI code without reviewing it and making necessary adjustments.
-- The use of the `Assisted-by` tag is mandatory. If understood, the Maintainer gains the right to veto.
-- Manage AI with contextually appropriate and well-written prompts. For example, a prompt should be at least 150 words long and contain detailed logic. Otherwise, AI, or LLMs, won't fit your context and will babble. - Use a memory bank system, but never put these memory banks in a repository. If necessary, temporarily add them to `.gitignore`, and if the Assistant gets frustrated because it can't see them, politely explain it to them.
+- Manage AI with contextually appropriate and well-written prompts. For example, a prompt might be around 150 words long, but it should contain detailed logic. Otherwise, the AI ​​or LLMs will not fit your context and will babble. - Use a memory bank system, but never put these memory banks in a repository. If necessary, temporarily add them to `.gitignore`, and if the Assistant gets frustrated because it can't see them, explain it to it gently.
 
 ### Source of Truth Model
 
-The official Project Tick group and instance can be accessed [here]. Remember, we have no affiliation with GitHub (except for CI/CD). However, when these conditions are met – that is, when we have independent CI/CD machines – full independence will be achieved and this issue will be resolved to some extent. We are thinking of you and you can be sure that we will act accordingly. We returned to GitHub due to CI/CD restrictions and configurations, and decided that GitLab was not suitable for us. GitLab's contribution threshold is a bit high, and it is difficult for contributors to reach us, but let's not deny them their due. But you might ask, "Didn't the contribution space increase even more when you left GitLab SaaS and moved to your own infrastructure?" Don't worry. We returned to GitLab SM, thinking, "Why not?" Joking aside, thanks to Foreman, we can solve the CI/CD issue in Merge Requests. We have completely abandoned Mailman, Gitolite, CGit, Gitweb, Forgejo, and Bugzilla. Now we are all in one place. We are also abandoning GitHub entirely, except for CI/CD, due to the frustrating issues it has been causing recently. You can open your PRs as MRs, [and your Issues as Work Items in GitLab][4].
-
-### PolyRepo Model
-
-Project Tick has completely switched from the MonoRepo model to a PolyRepo model as of May 6th. The MonoRepo model made sense to us on GitHub because it allowed us to create repositories under the .org name without subgroups. That's no longer the case. Each project has its own repository, logo, and description; each subgroup has its own README, description, and repositories. Currently, the most repository is in the "Projects" subgroup, the entry point for Project Tick projects, as of May 6th. However, this number may increase over time, but a decrease is not expected.
-
-### Mirror's Deprecation WARNING
-
-Project Tick has discontinued mirroring services since transitioning to a polyrepo structure, specifically with Governance v6, except for github-actions and/or some exceptional repositories. The Project-Tick/Project-Tick repository on Github will remain to allow Foreman to handle CI/CD services, but its content will no longer be available. The mirrored locations are: Github, Gitlab Saas, Codeberg and Repo.or.cz.
+The official Project Tick group can be accessed [here][2]. Remember, we have no connection with GitHub (except for CI/CD). However, when these conditions are met – that is, when we have independent CI/CD machines – full independence will be achieved and this issue will be resolved to some extent. We are thinking of you and you can be sure that we will act accordingly. Thanks to Foreman, we are able to solve the CI/CD issue in Merge Requests. Now we are all in one place. Also, we are completely abandoning GitHub except for CI/CD due to the frustrating issues it has caused recently. You can open your PRs as MRs, [and your Issues as Work Items in GitLab][5].
 
 ### Labeling Model
+
+Our labeling model is designed to be uncomplicated. We try to use every tag with scoped and a number in front of it as much as possible. Our labels have a certain order. If we have to mention,
+
+```text
+1.os::
+2.type::
+3.area::
+4.with::
+5.ci::
+6.topic::
+7.workflow::
+8.has::
+9.needs::
+10.severity::
+11.priority::
+```
+
+The structure you see above dominates.
+
+### Foreman
+
+Foreman is a developer-friendly platform. It's a massive monolith capable of running workflows from a GitHub repository, pulling and storing logs from workflows, writing pipeline status and external status checks to MR, and managing release processes. It operates by connecting to a user via a token, and then to a group, project, or system hook. It can write pipelines, display commands with "bot, help," sign CLAs, and update dependencies. It also includes a website and dashboard. It can securely manage our release processes and assign both beta and stable tags when the time comes.
+
+### Changelog Model
+
+Changelogs are generated using the trailers you specify in your commits.
+
+### Release Model
+
+The release model in Project Tick is quite clear. A stable tag is released on the 3rd Wednesday of each month, and a beta tag every week. The release follows each tag on the 3rd Thursday of each month. However, distribution to package managers can take until the 3rd Sunday of each month. Our tags are released as vX.Y.Z.
 
 ### Subproject Boundaries
 
@@ -164,9 +185,10 @@ As seen above, it generally manages one of the 16+ projects. However, the Folder
 
 GITLAB is a trademark of GitLab Inc. in the United States and other countries and regions
 
-[1]: https://github.com/YongDo-Hyun
-[2]: https://github.com/project-tick/project-tick.git
-[3]: https://id.projecttick.net/realms/projecttick/account
-[4]: https://git.projecttick.org/groups/project-tick/-/work_items
-[5]: https://git.projecttick.org/project-tick/governance/governancedoc/-/blob/master/GOVERNANCE.md#merge-request-model
-[6]: https://git.projecttick.org/project-tick/
+[1]: https://gitlab.com/project-tick/community/onboarding/-/work_items
+[2]: https://gitlab.com/project-tick
+[3]: https://gitlab.com/project-tick/service/desk/help-desk/-/work_items
+[4]: https://gitlab.com/YongDo-Hyun
+[5]: https://gitlab.com/groups/project-tick/-/work_items
+[6]: https://id.projecttick.net/realms/projecttick/account
+[7]: mailto:projecttick@projecttick.org
