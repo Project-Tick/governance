@@ -1,4 +1,4 @@
-# Project Tick Governance v8, 22 June 2026
+# Project Tick Governance v9, 23 June 2026
 
 <!--
 
@@ -19,7 +19,7 @@ This document discusses the Project Tick ecosystem, repository management method
 
 ## Management
 
-Project Tick's CI/CD requirements can be viewed via GitHub Actions and GitLab CI; the NameSpace and instance are accessible via GitLab™ SaaS at [gitlab.com/project-tick/][2]. When you enter the NameSpace, you will find a README file outlining the process. This is a different world from GitHub. Remember, even without a Pull Request, you can easily exercise your rights in your repository and open a Merge Request (MR) via GitLab. All you have to do is open an MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we were always free. But now we are even freer, and our workflows are now repository-independent. This ensures the highest level of security. Each sub-project has its own repository. The hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace homepage. GitLab is a structure that allows us to manage security controls, nested structures from a single top-down perspective, and to directly name any project or subgroup regardless of logo and path. Therefore, we always support GitLab and are fully behind it. You can reach Project Tick via [Help Desk][3].
+Project Tick's CI/CD requirements can be viewed via GitHub Actions and GitLab CI; the NameSpace and instance are accessible via GitLab™ Self-managed at [git.projecttick.org/project-tick/][2]. When you enter the NameSpace, you will find a README file outlining the process. This is a different world from GitHub. Remember, even without a Pull Request, you can easily exercise your rights in your repository and open a Merge Request (MR) via GitLab. All you have to do is open an MR immediately after submitting a commit (even if it's a draft). This allows you to test your commit in every aspect with CI. In short, we were always free. But now we are even freer, and our workflows are now repository-independent. This ensures the highest level of security. Each sub-project has its own repository. The hierarchy is more easily managed with GitLab's Subgroup feature. You will be able to understand the hierarchy both here and on the namespace homepage. GitLab is a structure that allows us to manage security controls, nested structures from a single top-down perspective, and to directly name any project or subgroup regardless of logo and path. Therefore, we always support GitLab and are fully behind it. You can reach Project Tick via [Help Desk][3].
 
 ### Merge Request Model
 
@@ -31,7 +31,7 @@ Maintainers are responsible for maintaining the project folder located in CODEOW
 
 ### Repository Model
 
-Our repositories aren't constantly and actively cloned to any platform. However, we use GitHub's Actions and our Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in GitLab. In doing so, we've made workflows as independent of the repository as possible, except for "secrets". Many projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we should also thank Flathub; we were inspired by their "vorarbeiter" project. We forked it initially, then rewrote it with Ruby on Rails to counter the slowness of Python, so we thank them for giving us this inspiration. TL;DR: Go to gitlab.com, create an account, fork the repository(s), commit, open a merge request, run the CI/CD, make sure it's successful, and we'll check and merge. It's that simple.
+Our repositories aren't constantly and actively cloned to any platform. However, we use GitHub's Actions and our Foreman system for CI/CD checks. With our Foreman system, we can easily test Merge Requests created in GitLab. In doing so, we've made workflows as independent of the repository as possible, except for "secrets". Many projects like MeshMC, MNV, and Json++ can now be tested thanks to Foreman. Of course, we should also thank Flathub; we were inspired by their "vorarbeiter" project. We forked it initially, then rewrote it with Ruby on Rails to counter the slowness of Python, so we thank them for giving us this inspiration. TL;DR: Go to git.projecttick.org, create an account, fork the repository(s), commit, open a merge request, run the CI/CD, make sure it's successful, and we'll check and merge. It's that simple.
 
 ### Decision-Making Model
 
@@ -130,65 +130,136 @@ The release model in Project Tick is quite clear. A stable tag is released on th
 
 Each project makes its own decisions. We are in this Polyrepo structure. However, there are differences between the folder maintainer and the project maintainer. Project Maintainer:
 
-```json
-Project Tick
-├── branding
-├── documentation
-├── governance
-│   └── governancedoc
-├── infra
-│   ├── actions-images
-│   ├── foreman
-│   ├── github-actions
-│   └── merge-action
-├── legal
-├── meta
-│   ├── launcher
-│   └── upstream
-├── projects
-│   ├── cgit
-│   ├── classparser
-│   ├── cmark
-│   ├── corebinutils
-│   ├── forgewrapper
-│   ├── ganalytics
-│   ├── genqrcode
-│   ├── hooks
-│   ├── iconfix
-│   ├── imagesplusplus
-│   ├── javacheck
-│   ├── javalauncher
-│   ├── jsonplusplus
-│   ├── katabasis
-│   ├── libnbtplusplus
-│   ├── localpeer
-│   ├── meshmc
-│   ├── meta
-│   ├── mnv
-│   ├── neozip
-│   ├── optional-bare
-│   ├── rainbow
-│   ├── scripts
-│   ├── systeminfo
-│   ├── tomlplusplus
-│   └── xz-embedded
-├── repositories
-│   └── flatpak
-├── statics
-│   └── sfiles
-└── website
+```text
+Project Tick HQ
+├── Community (ID: 17)
+│   ├── Community Lab (ID: 128)
+│   ├── Community Projects (ID: 127)
+│   ├── Contributable Forks (ID: 129)
+│   │   └── Project Tick (ID: 130)
+│   │       └── Projects (ID: 131)
+│   │           └── MeshMC [meshmc]
+│   └── Onboarding [onboarding]
+├── DevOps (ID: 19)
+├── DevSecOps (ID: 20)
+├── Developers (ID: 21)
+│   └── MeshMC (ID: 40)
+│       └── Plugins (ID: 96)
+│           ├── All GA Plugins (ID: 107)
+│           └── Staging (ID: 108)
+│               └── All Non GA Plugins (ID: 112)
+├── GitOps (ID: 22)
+├── Governance (ID: 23)
+│   └── Governance Document [governancedoc]
+├── Infra (ID: 25)
+│   ├── K8s (ID: 50)
+│   │   └── Configs [configs]
+│   ├── Vendored (ID: 51)
+│   │   ├── forgejo (ID: 98)
+│   │   │   └── forgejo [forgejo]
+│   │   └── go-gitea (ID: 99)
+│   │       └── gitea [gitea]
+│   ├── Foreman [foreman]
+│   ├── Gitea [gitea]
+│   ├── ForgeJo [forgejo]
+│   ├── Foreman 2.0 [foreman-2.0]
+│   ├── Foreman 1.0 - Python [foreman-1.0]
+│   ├── Actions Images [actions-images]
+│   ├── Merge Action [merge-action]
+│   └── GitHub Actions [github-actions]
+├── Initiative (ID: 119)
+│   └── Systematic Engineering (ID: 120)
+│       └── Conditional Systems (ID: 121)
+│           └── Lab (ID: 122)
+│               └── Forks (ID: 123)
+│                   └── Project Tick (ID: 124)
+│                       └── Projects (ID: 125)
+│                           └── MeshMC [meshmc]
+├── Internal (ID: 26)
+├── Maintainers (ID: 28)
+├── Meta (ID: 27)
+│   ├── Upstream [upstream]
+│   └── Launcher [launcher]
+├── Packaging (ID: 30)
+│   └── ppm-pkgs [ppm-pkgs]
+├── Private (ID: 29)
+├── Projects (ID: 31)
+│   ├── Libraries (ID: 89)
+│   │   └── Vendored (ID: 102)
+│   │       └── zlib-ng (ID: 110)
+│   │           └── zlib-ng [zlib-ng]
+│   ├── Vendored (ID: 90)
+│   ├── Pen [pen]
+│   ├── MeshMC [meshmc]
+│   ├── MNV [mnv]
+│   ├── CGit [cgit]
+│   ├── NeoZIP [neozip]
+│   ├── Images++ [imagesplusplus]
+│   ├── ClassParser [classparser]
+│   ├── CMark [cmark]
+│   ├── CoreBinutils [corebinutils]
+│   ├── ForgeWrapper [forgewrapper]
+│   ├── GAnalytics [ganalytics]
+│   ├── GenQRCode [genqrcode]
+│   ├── IconFIX [iconfix]
+│   ├── Hooks [hooks]
+│   ├── JavaCheck [javacheck]
+│   ├── JavaLauncher [javalauncher]
+│   ├── Json++ [jsonplusplus]
+│   ├── Katabasis [katabasis]
+│   ├── LibNBT++ [libnbtplusplus]
+│   ├── LocalPeer [localpeer]
+│   ├── Optional Bare [optional-bare]
+│   ├── MeshMC Meta [meta]
+│   ├── RainBOW [rainbow]
+│   ├── Toml++ [tomlplusplus]
+│   ├── scripts [scripts]
+│   ├── SystemINFO [systeminfo]
+│   └── XZEmbedded [xz-embedded]
+├── Release (ID: 33)
+│   └── Deploy (ID: 88)
+│       └── Tags (ID: 101)
+├── Repositories (ID: 32)
+├── Service (ID: 34)
+│   └── desk (ID: 94)
+│       └── Help Desk [help-desk]
+├── Statics (ID: 35)
+│   └── sFiles [sfiles]
+├── Technical Writing (ID: 118)
+│   └── Handbook (ID: 24)
+│       ├── Governance (ID: 53)
+│       ├── Legal (ID: 52)
+│       ├── Libraries (ID: 54)
+│       ├── Projects (ID: 55)
+│       ├── Services (ID: 56)
+│       │   └── Infra (ID: 100)
+│       └── Systems (ID: 57)
+├── Translations (ID: 37)
+│   └── Project Tick ORG (ID: 95)
+│       └── Projects (ID: 105)
+│           └── meshmc [meshmc]
+├── UppFinna Technologies (ID: 36)
+├── Vendored (ID: 38)
+├── triage-reports [triage-reports]
+├── Release Tracking [release-tracking]
+├── ppm [ppm]
+├── gitlab-profile [gitlab-profile]
+├── Documentation [documentation]
+├── Project Tick Development Kit [pdk]
+├── Branding [branding]
+└── Legal [legal]
 ```
 
-As seen above, it generally manages one of the 16+ projects. However, the Folder Maintainer is only responsible for one folder within the 16+ projects. If there are interdependent projects among these 16+ projects, technical decisions must be made in a way that does not disrupt other products or in agreement with other project maintainers. Nothing should be broken here. Maintainers, we hope you know your place.
+As seen above, it generally manages one of the 16+ projects. However, the Folder Maintainer is only responsible for one folder within the 16+ projects. If there are interdependent projects among these 16+ projects, technical decisions must be made in a way that does not disrupt other products or in agreement with other project maintainers.
 
 ## Disclaimer
 
 GITLAB is a trademark of GitLab Inc. in the United States and other countries and regions
 
-[1]: https://gitlab.com/project-tick/community/onboarding/-/work_items
-[2]: https://gitlab.com/project-tick
-[3]: https://gitlab.com/project-tick/service/desk/help-desk/-/work_items
-[4]: https://gitlab.com/YongDo-Hyun
-[5]: https://gitlab.com/groups/project-tick/-/work_items
+[1]: https://git.projecttick.org/project-tick/community/onboarding/-/work_items
+[2]: https://git.projecttick.org/project-tick
+[3]: https://git.projecttick.org/project-tick/service/desk/help-desk/-/work_items
+[4]: https://git.projecttick.org/YongDo-Hyun
+[5]: https://git.projecttick.org/groups/project-tick/-/work_items
 [6]: https://id.projecttick.net/realms/projecttick/account
 [7]: mailto:projecttick@projecttick.org
